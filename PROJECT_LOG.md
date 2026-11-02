@@ -23,3 +23,24 @@
 Each member should add their actual reviews, changes, questions, bugs,
 algorithm explanations, AI tool use, and contributions. Write theoretical
 predictions before performance experiments; retain their original wording.
+
+## 2 November 2026 — approximation implementation and integration
+
+- Added the deterministic maximal-matching 2-approximation with immutable
+  cover/matching results and a matching-size lower bound. It reuses `Graph`
+  and canonical edge order; the exact solver and its initial incumbent remain
+  unchanged.
+- Added `--algorithm approximation`, retaining exact mode as the default and
+  its existing JSON/exit-code behaviour. Approximation reports completion with
+  optimality not assessed and rejects exact-only limits.
+- Moved the existing brute-force oracle into a shared test helper. All 33 test
+  methods passed on Python 3.14 on Windows, including 1,100 exhaustive and 300
+  seeded random cases per solver, matching invariants, structured families,
+  a 100,000-vertex sparse case, and CLI compatibility/error handling.
+- The first full test run encountered temporary-folder permission errors in
+  three CLI tests (including an existing exact test). Repeating with TEMP/TMP
+  pointing inside the workspace passed. This was an environment issue; no
+  solver defect was found by these checks.
+- Python 3.11 compatibility follows the declared API/syntax requirements but
+  was not tested on a Python 3.11 interpreter. No comparative performance
+  experiments have been run; the report and benchmark runner remain pending.
