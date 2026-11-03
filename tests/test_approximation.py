@@ -1,7 +1,7 @@
 """Independent feasibility, approximation-bound, and compatibility checks."""
 
 from dataclasses import FrozenInstanceError
-from itertools import combinations
+from itertools import combinations, permutations
 import random
 import unittest
 
@@ -102,6 +102,66 @@ class ApproximationTests(unittest.TestCase):
             result.matching = ()
         self.check_result(Graph(2))
         self.assertEqual(result, solve_approximation(Graph(2, [(0, 1)])))
+
+    def check_relabelling(self, graph, permutation, optimum):
+        original = (graph.num_vertices, graph.edges)
+        # Build the mapping here independently of the experiment's relabel helper.
+        mapped = Graph(graph.num_vertices,
+                       ((permutation[u], permutation[v]) for u, v in graph.edges))
+        self.assertEqual(brute_force_optimum(mapped.num_vertices, mapped.edges), optimum)
+        result = self.check_result(mapped, optimum)
+        inverse = {new: old for old, new in enumerate(permutation)}
+        restored_cover = frozenset(inverse[v] for v in result.cover)
+        self.assertTrue(is_vertex_cover(graph, restored_cover))
+        self.assertEqual(len(restored_cover), result.cover_size)
+        restored_edges = tuple(sorted(tuple(sorted((inverse[u], inverse[v])))
+                                      for u, v in mapped.edges))
+        self.assertEqual(restored_edges, graph.edges)
+        self.assertEqual((graph.num_vertices, graph.edges), original)
+        return result
+
+    def test_every_relabelling_of_all_graphs_through_four_vertices(self):
+        cases = 0
+        for n in range(5):
+            possible = tuple(combinations(range(n), 2))
+            for mask in range(1 << len(possible)):
+                graph = Graph(n, [e for i, e in enumerate(possible) if mask & (1 << i)])
+                optimum = brute_force_optimum(n, graph.edges)
+                for permutation in permutations(range(n)):
+                    with self.subTest(n=n, mask=mask, permutation=permutation):
+                        self.check_relabelling(graph, permutation, optimum)
+                    cases += 1
+        self.assertEqual(cases, 1590)
+
+    def test_seeded_relabellings_of_structured_and_random_graphs(self):
+        rng = random.Random(20261103)
+        graphs = [
+            Graph(9),
+            Graph(9, ((i, i + 1) for i in range(8))),
+            Graph(9, ((i, (i + 1) % 9) for i in range(9))),
+            Graph(9, ((0, i) for i in range(1, 9))),
+            Graph(9, combinations(range(9), 2)),
+            Graph(9, ((i, i + 1) for i in range(0, 8, 2))),
+            Graph(9, ((u, v) for u in range(2) for v in range(2, 9))),
+            Graph(9, [(0, 1), (1, 2), (0, 2), (3, 4), (4, 5)]),
+        ]
+        for n in range(5, 10):
+            for probability in (.2, .5, .8):
+                graphs.append(Graph(n, [e for e in combinations(range(n), 2)
+                                        if rng.random() < probability]))
+        cases = 0
+        for index, graph in enumerate(graphs):
+            optimum = brute_force_optimum(graph.num_vertices, graph.edges)
+            original_result = solve_approximation(graph)
+            for repetition in range(10):
+                permutation = list(range(graph.num_vertices))
+                rng.shuffle(permutation)
+                with self.subTest(graph=index, repetition=repetition):
+                    # Optimal size is invariant; greedy cover size need not be.
+                    self.check_relabelling(graph, permutation, optimum)
+                    self.assertEqual(solve_approximation(graph), original_result)
+                cases += 1
+        self.assertEqual(cases, 230)
 
     def test_non_graph_arguments(self):
         for bad in (None, [], {}, 3, "graph", [(0, 1)]):

@@ -13,7 +13,7 @@ import unittest
 from unittest.mock import patch
 
 from tests.helpers import brute_force_optimum
-from vertex_cover import Graph, solve_exact
+from vertex_cover import Graph, solve_approximation, solve_exact
 from vertex_cover.analysis import analyse_run, summarise_run
 from vertex_cover.benchmark import run_benchmarks
 from vertex_cover.datasets import (canonical_bytes, digest, generate_dataset, graph_digest,
@@ -138,6 +138,67 @@ class GeneratorTests(WorkspaceTest):
 
 
 class BenchmarkTests(WorkspaceTest):
+    def test_saved_approximation_measurements_match_direct_solver_calls(self):
+        for warmups in (0, 1):
+            with self.subTest(warmups=warmups):
+                root = self.folder / f"consistency-warmups-{warmups}"
+                settings = self.config({
+                    "random_sizes": [0, 5, 7], "probabilities": [0, .5, 1], "seeds": [2],
+                    "families": ["path", "star", "clique", "disjoint_edges", "complete_bipartite"],
+                    "structured_sizes": [0, 4, 7], "relabel_sizes": [4],
+                    "relabel_families": ["path"], "permutation_seeds": [0, 1],
+                    "warmups": warmups,
+                })
+                generate_dataset(settings, root / "inputs")
+                manifest, instances = load_dataset(root / "inputs")
+                direct = {entry["id"]: solve_approximation(graph) for entry, graph in instances}
+                metadata = run_benchmarks(root / "inputs", root / "run")
+                summary = analyse_run(root / "run", root / "analysis")
+                self.assertTrue(metadata["completed"])
+                self.assertEqual(metadata["measured_rows"], len(instances) * 2 * 2)
+                with (root / "run/raw.csv").open(newline="", encoding="utf-8") as file:
+                    raw = {(r["instance_id"], int(r["repetition"])): r
+                           for r in csv.DictReader(file) if r["algorithm"] == "approximation"}
+                details = [json.loads(line) for line in
+                           (root / "run/details.jsonl").read_text(encoding="utf-8").splitlines()]
+                approximate_details = [r for r in details if r["algorithm"] == "approximation"]
+                expected_keys = {(entry["id"], repetition) for entry in manifest["instances"]
+                                 for repetition in range(2)}
+                self.assertEqual(set(raw), expected_keys)
+                self.assertEqual({(r["instance_id"], r["repetition"])
+                                  for r in approximate_details}, expected_keys)
+                self.assertEqual(len(approximate_details), len(expected_keys))
+                for detail in approximate_details:
+                    identifier = detail["instance_id"]
+                    expected = direct[identifier]
+                    row = raw[(identifier, detail["repetition"])]
+                    expected_calls = 1 if warmups == 0 else 3
+                    self.assertEqual(len(detail["calls"]), expected_calls)
+                    self.assertEqual(int(row["batch_calls"]), expected_calls)
+                    self.assertEqual(int(row["batch_elapsed_ns"]), detail["batch_elapsed_ns"])
+                    self.assertAlmostEqual(float(row["seconds_per_call"]),
+                                           detail["batch_elapsed_ns"] / expected_calls / 1e9)
+                    for result in detail["calls"]:
+                        # Do not reuse the benchmark's serialization/validation
+                        # helper: a field-mapping bug must be visible here.
+                        self.assertEqual(result, {
+                            "cover": sorted(expected.cover),
+                            "cover_size": expected.cover_size,
+                            "matching": [list(edge) for edge in expected.matching],
+                            "lower_bound": expected.lower_bound,
+                            "status": "completed", "optimal": None,
+                        })
+                    for field in ("cover_size", "cover_size_min", "cover_size_max"):
+                        self.assertEqual(int(row[field]), expected.cover_size)
+                    self.assertEqual(int(row["lower_bound"]), expected.lower_bound)
+                    self.assertEqual(row["status"], "completed")
+                    self.assertEqual(row["valid_cover"], "True")
+                    self.assertEqual(row["optimal"], "")
+                    self.assertEqual(row["certified_optimum"], "")
+                for entry in summary["instances"]:
+                    self.assertEqual(entry["approximation_cover_size"],
+                                     direct[entry["instance_id"]].cover_size)
+
     def test_paired_run_saves_all_details_and_summary_denominators(self):
         metadata, summary = self.run_pipeline()
         self.assertTrue(metadata["completed"])
