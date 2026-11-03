@@ -24,6 +24,33 @@ Each member should add their actual reviews, changes, questions, bugs,
 algorithm explanations, AI tool use, and contributions. Write theoretical
 predictions before performance experiments; retain their original wording.
 
+## 3 November 2026 — comparison workflow
+
+- At Derek's request, Codex added graph generation, saved input manifests,
+  paired timing, integrity-checked summaries, Matplotlib plots, and workflow
+  tests on a separate comparison-workflow branch. The original exact and
+  approximation implementations are preserved.
+- The prediction snapshot is AI-assisted and explicitly awaits student review;
+  it must not be represented as independent student beliefs without review.
+- Tests cover known generator optima, hashing, corruption, no-overwrite
+  behaviour, interruption, mixed-status batches, quality denominators,
+  relabelling, paired samples, subprocesses, and plot exports.
+- Installation of the isolated plotting dependency initially failed because
+  the restricted default temporary directory could not be used by the package
+  installer. Retrying with a writable task-local temporary directory succeeded.
+  This is an environment/setup issue, not an invented algorithmic AI failure.
+- Smoke-run artifacts are labelled pipeline validation. Record final study
+  execution and student interpretation separately when those are completed.
+- The full suite passed all 49 tests on the actual repository with Python
+  3.12.14 and Matplotlib 3.11.2. The 23-graph smoke run saved 138 measured
+  rows and exercised interrupted exact searches. Both solver modules were
+  kept byte-for-byte unchanged.
+- A genuine AI-generated plotting issue was found during visual review:
+  when there was only one relabelling category, automatic x-axis limits
+  expanded its small display jitter across the whole chart. Codex fixed
+  explicit categorical limits and regenerated the figure from saved data.
+  This was tool-detected, not evidence that a student independently found it.
+
 ## 2 November 2026 — approximation implementation and integration
 
 - Added the deterministic maximal-matching 2-approximation with immutable

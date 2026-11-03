@@ -9,6 +9,9 @@ description = "Exact and approximate minimum vertex cover comparison project"
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+plots = ["matplotlib>=3.8,<4"]
+
 [project.scripts]
 vertex-cover = "vertex_cover.__main__:main"
 

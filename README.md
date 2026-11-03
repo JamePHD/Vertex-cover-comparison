@@ -2,7 +2,43 @@
 vertex cover comparison
 
 Theme 1: exact branch-and-bound versus a maximal-matching 2-approximation.
-Both solvers are implemented; comparative experiments and the report remain.
+Both solvers and the reproducible comparison workflow are implemented.
+The final empirical interpretation, report, and video remain student work.
+
+## Complete workflow quickstart
+
+From this repository root, using Python 3.11 or newer:
+
+```powershell
+python -m pip install ".[plots]"
+python -m unittest discover -s tests -v
+python -m vertex_cover experiment --config configs/smoke.json --output results/smoke --plots
+```
+
+This short run generates inputs, times both solvers, saves every measured
+batch and its individual results, rebuilds summaries, and exports PNG/SVG/PDF
+plots. It is labelled **pipeline validation**, not the final study. Pick a new
+output folder for each run: existing output is never overwritten or mixed.
+
+Before final study timing, both members should review and commit their actual
+predictions in `docs/PREDICTIONS.md` and agree on `configs/study.json`. Then:
+
+```powershell
+python -m vertex_cover experiment --config configs/study.json --output results/study --plots
+```
+
+The study preset contains 508 graphs (400 random, 48 structured, 60 relabelled)
+and 3 measured repetitions per algorithm. It uses a two-second cooperative
+exact limit, no node limit, and one untimed warm-up per algorithm/graph. Its
+worst-case budget is roughly 68 minutes for single-call exact runs, plus
+setup, fast-call batching, and plotting; actual duration depends on inputs
+and hardware. A cooperative limit can overrun. Do not run other CPU-heavy work
+concurrently if measurements will be used in the report.
+
+Core graph generation, benchmarking, analysis, and tests use only the standard
+library. The optional `plots` extra installs Matplotlib for scientific figures;
+omit `--plots` if it is not installed, then rebuild figures later. See
+`docs/EXPERIMENTS.md` for the protocol, saved files, and interpretation rules.
 
 ## Run without installation
 
@@ -32,7 +68,9 @@ if desired; this is optional and the build backend may need downloading.
 - Exact solver: assigned student owner **Derek Song**.
 - Approximation: maximal-matching 2-approximation for the other group member.
 - Shared graph model, feasibility checker, JSON CLI, and correctness tests included.
-- Unified performance benchmarks, plots, report, and video remain future work.
+- Shared generators, paired benchmarks, analysis, and scientific plots are included.
+- Final study settings and predictions need both students' review; the report
+  and video require their actual interpretation and individual explanations.
 
 This initial implementation and its tests/documentation were generated using
 Codex. The assigned owner must review, understand, and take responsibility for
@@ -147,8 +185,9 @@ worst case; pruning improves some instances without eliminating that risk.
 - `incumbent_updates`: number of improvements to the initial cover.
 - `max_stack_size`: largest number of pending states, not a byte-memory measure.
 - `elapsed_seconds`: solver wall time, including its setup and result construction;
-  excludes graph parsing and file I/O. Future benchmarks should additionally
-  measure whole solver calls externally with the same timing boundaries.
+  excludes graph parsing and file I/O. The comparison runner measures complete
+  solver calls externally with the same timing boundaries, rather than using
+  an internal timer as its primary metric.
 
 Time limits are cooperative, checked between states. Setup and a single node
 can run past the requested limit; this is not a hard process deadline.
@@ -168,16 +207,21 @@ empty graphs, isolates, single and disjoint edges, stars, cliques, paths,
 cycles, disconnected graphs, and label sensitivity. A 100,000-vertex sparse
 case checks large vertex identifiers and iterative construction.
 
-The suite also checks frozen results, invalid arguments, exact interruptions,
+The original solver suite also checks frozen results, invalid arguments, exact interruptions,
 both solvers on the same graph, and CLI subprocesses including rejected
-approximation limits and unchanged exact output. All **33 test methods** passed
-on Python 3.14 on Windows. Python 3.11 is the declared minimum; that interpreter
-was not available for this validation. If the environment blocks the default
-temporary folder, run from this project folder with writable temporary paths:
+approximation limits and unchanged exact output. The workflow adds generator
+oracles, input hash checks, no-overwrite protection, timeout and mixed-batch
+analysis, output corruption checks, subprocess execution and plot rebuilding.
+The full suite contains **49 test methods**, including the optional plot test.
+The comparison-workflow revision is validated on Python 3.12 on Windows.
+Python 3.11 is the declared minimum, not an independently tested interpreter
+in this environment. Without the plots extra, one plot test is skipped.
+If the environment blocks the default temporary folder, use:
 
 ```powershell
-$env:TEMP = (Get-Location).Path
-$env:TMP = (Get-Location).Path
+New-Item -ItemType Directory -Path .test-temp -Force | Out-Null
+$env:TEMP = (Resolve-Path .test-temp).Path
+$env:TMP = $env:TEMP
 python -m unittest discover -s tests -v
 ```
 
@@ -195,8 +239,8 @@ actual bugs, design decisions, AI failures, and each person's contributions.
 
 Do not describe unrun experiments or fabricated surprises as completed work.
 
-For the future benchmark adapter, time each complete solver call externally
-with `time.perf_counter`, using the same preconstructed `Graph` for both.
+The benchmark runner times each complete solver call externally
+with `time.perf_counter_ns`, using the same preconstructed `Graph` for both.
 Include allocation and result construction; exclude graph generation,
 validation, JSON serialisation, and plotting. Keep separate result types and
 record approximation completion separately from exact optimality. Do not
@@ -207,7 +251,22 @@ Compute `approximation.cover_size / exact.cover_size` only when
 not applicable and retain timeout/node-limit results without treating their
 incumbents as certified optima. If agreed for the study, pass
 `time_limit=2.0` explicitly to the exact solver; its CLI default is ten seconds.
-The full comparative runner, measurements, and plots are still pending.
+The smoke preset uses intentionally small inputs and restrictive exact limits
+to exercise the workflow. Its timings are not a substitute for the final study.
+
+## Rebuild individual stages
+
+```powershell
+python -m vertex_cover generate --config configs/smoke.json --output results/inputs-only
+python -m vertex_cover benchmark --dataset results/inputs-only --output results/run-only
+python -m vertex_cover analyse --run results/run-only --output results/analysis-only
+python -m vertex_cover plot --analysis results/analysis-only --output results/plots-only
+```
+
+Every stage writes to a new folder. Inputs and runs are self-contained: they
+retain the configuration, prediction snapshot, graph metadata and hashes.
+Run `python -m vertex_cover experiment --help` for workflow options. Existing
+single-graph commands continue to work unchanged.
 
 ## Research starting point
 
