@@ -1,0 +1,46 @@
+{
+  "name": "smoke",
+  "purpose": "pipeline_validation",
+  "predictions_file": "../docs/PREDICTIONS.md",
+  "random_sizes": [
+    6,
+    10
+  ],
+  "probabilities": [
+    0.2,
+    0.7
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "structured_sizes": [
+    6,
+    10
+  ],
+  "families": [
+    "path",
+    "cycle",
+    "star",
+    "clique",
+    "disjoint_edges",
+    "complete_bipartite"
+  ],
+  "relabel_sizes": [
+    10
+  ],
+  "relabel_families": [
+    "path"
+  ],
+  "permutation_seeds": [
+    101,
+    102,
+    103
+  ],
+  "repetitions": 3,
+  "warmups": 1,
+  "exact_time_limit": 0.02,
+  "exact_node_limit": 40,
+  "batch_threshold_ns": 1000000,
+  "batch_size": 25
+}
