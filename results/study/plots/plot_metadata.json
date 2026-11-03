@@ -1,0 +1,22 @@
+{
+  "matplotlib_version": "3.11.2",
+  "plot_source_sha256": "30c34cfbd334ee8f087b5e0d32b645e297bc106477c2cc6852e1b8c70665a9ff",
+  "summary_sha256": "bdc90b9b8af708c0b4c36f6cd9446252e752ed59a7de35c9921a0a5fc0b32092",
+  "files": [
+    "runtime.png",
+    "runtime.svg",
+    "runtime.pdf",
+    "quality.png",
+    "quality.svg",
+    "quality.pdf",
+    "completion.png",
+    "completion.svg",
+    "completion.pdf",
+    "search_effort.png",
+    "search_effort.svg",
+    "search_effort.pdf",
+    "labelling.png",
+    "labelling.svg",
+    "labelling.pdf"
+  ]
+}

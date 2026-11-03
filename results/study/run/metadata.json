@@ -1,0 +1,7248 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-11-03T07:29:50.141091+00:00",
+  "completed": true,
+  "purpose": "comparative_study",
+  "config": {
+    "name": "study",
+    "purpose": "comparative_study",
+    "predictions_file": "../docs/PREDICTIONS.md",
+    "random_sizes": [
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      40
+    ],
+    "probabilities": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "structured_sizes": [
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      40
+    ],
+    "families": [
+      "path",
+      "cycle",
+      "star",
+      "clique",
+      "disjoint_edges",
+      "complete_bipartite"
+    ],
+    "relabel_sizes": [
+      12,
+      24
+    ],
+    "relabel_families": [
+      "path",
+      "cycle",
+      "star"
+    ],
+    "permutation_seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109
+    ],
+    "repetitions": 3,
+    "warmups": 1,
+    "exact_time_limit": 2.0,
+    "exact_node_limit": null,
+    "batch_threshold_ns": 1000000,
+    "batch_size": 25
+  },
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 165 Stepping 5, GenuineIntel",
+    "logical_cpu_count": 12,
+    "physical_ram_bytes": 34249052160,
+    "gc_enabled": true,
+    "gc_thresholds": [
+      700,
+      10,
+      10
+    ],
+    "clock": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution_seconds": 1e-07,
+      "monotonic": true,
+      "adjustable": false
+    },
+    "power_settings": "Not detected; record manually for the final study."
+  },
+  "source": {
+    "git_commit": "7b2d5fc9e055132d533b1edbbb2d11b2207d7663",
+    "source_sha256": {
+      "vertex_cover/__init__.py": "db46cc30244ff269ba657c79a4e71aa8310940e30ced314834e4fc847b86a360",
+      "vertex_cover/__main__.py": "4cbaad45da92bb2fe3ea8019a264cffb2b5e0bc1f2da5b05a944c2353ff7fe26",
+      "vertex_cover/analysis.py": "97daca42c599bed10f2303a4bd8efe31059fea4e622a5d23227766574c1b50ee",
+      "vertex_cover/approximation.py": "91e9549e11c97f20d61f2065a1dad07ba16589c09366bf616486f049dae032ed",
+      "vertex_cover/benchmark.py": "da11711cdabe01dc9689975bb9b346a350d109a22e1cfb61c3738d407ebc50c3",
+      "vertex_cover/datasets.py": "368f02940a175448ac00a1651237288e5cdc83dcf8d6a2aa6067b8c754200bb4",
+      "vertex_cover/exact.py": "9a76b14a9f24d0e0590ad326be8c0c782acf5e904efd3b8def2138c21c865dc9",
+      "vertex_cover/graph.py": "173cae284f031d8a75e4dd3156c3d1fd5504b1356d8bf69c90a88d7ae4438b45",
+      "vertex_cover/plots.py": "30c34cfbd334ee8f087b5e0d32b645e297bc106477c2cc6852e1b8c70665a9ff",
+      "vertex_cover/workflow.py": "f4ca297e86e45e70654d15a6e114f09deb0a4928e8a572ef178d7137fe512d9a"
+    },
+    "note": "Source hashes identify executed files even when changes are uncommitted."
+  },
+  "manifest_sha256": "7bcd352e42dcfd22f88d5883745527d944d5062db9fcfb65f33537555aff93c4",
+  "predictions_sha256": "0d7b0c407f67b36020fd586e482a7aa922c6fff22793fc86aa7b8d25d1722150",
+  "prediction_endorsement": "AI-assisted proposals; student endorsement not verified by the runner.",
+  "timer": "perf_counter_ns",
+  "median_back_to_back_timer_ns": 100,
+  "timing_scope": "Complete solver calls, common wrapper and result list retention; excludes validation and I/O.",
+  "batch_rule": "Batch up to configured size only after a completed warm-up below threshold; warmups=0 means one call.",
+  "timeout_policy": "Cooperative, not a hard deadline. Mixed-status batches retained and excluded from completed timing.",
+  "warmups": [
+    {
+      "instance_id": "gnp_n8_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 18200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 60400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 50000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 51400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 87200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 66100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 33100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 24600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 52000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 515000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 56300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 85200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 90900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 49500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 66300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 76500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 56600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 49800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 81000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 85400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 57000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 91900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 88500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 88900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 99400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 125000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 80300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 102600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 227700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 299700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 112100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 138000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 108600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 84000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 331300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 346800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 120400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 330200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 282700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 158300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 299100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 59600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 243000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 150400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 171600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 48000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 167900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 244400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 112900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 420000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 533800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 541000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 380200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n8_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 70400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 59800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 131800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 50000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 122900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 125500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 64000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 73100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 66200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 86900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 333900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 21300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 204500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 368600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 127900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 125700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 223100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 135300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 363200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 366700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 37200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 274400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 251700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 431900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 825600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 189800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 805300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 610800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 409500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 833100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 670800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 669500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1544500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1423200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 670500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 504600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1474800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1044800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 894800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1047300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1020700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1383600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3144500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2152000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1151100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 925800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 979100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 938300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3293500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3235500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2254300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2258300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n12_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 36300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 59000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 143200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 76500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 48700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 80600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 93300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 150400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 62700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 170700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 445500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1081400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1038400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 373300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1801000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1030000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 714900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 728600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 529000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1949900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2605200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2568700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1216200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4875800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2370000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 675300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3173200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 8854400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 5317900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 8088400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 18171700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 16194100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 16143800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 14417000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 8388800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 18484700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 7203700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 12364800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 9608600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28116000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 43510900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 14890500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 68489500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 86221500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28345100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 55394400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 88196200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 86344800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 71714400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n16_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 100800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 201500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 223900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 150000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 132200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 148700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 269400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 705900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 386600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 24800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 288100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2784600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1379300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 12138400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4295500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4979500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 26900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 5101600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3328500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 6873400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3167800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 10142000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 3057500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 27109500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 29524600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 34800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 29464400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 13676600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 33088200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 31710400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 36927200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 41930500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 65629500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 147913700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 133535000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 103562600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 169009600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 90064800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 191237000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 156352700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 245574900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 135740500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 129435300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 936804800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 25000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 785512600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 85200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 341773800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 298580300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 319763400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 230506500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 295468200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 386865000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 896412100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 250534600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n20_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 102700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 447500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1397100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 447500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 506500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 273100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1147100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 478600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 149800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 887500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 7399500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 14843800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 30116900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28229000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 11050700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 26540300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 30187800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34502700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34444300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 81255900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 239878500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 178319200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 154373600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 85501700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 166968400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 215724100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 255791600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 779731400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 191223800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 469568400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 600074800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1684015300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1060181600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 527177600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1144069000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1175298800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 461526300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 33500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1394416600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 21900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1481740200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1303221200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n24_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000033100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000036400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000026500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000036900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000023800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000026800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n24_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 448800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4522200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1863200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1165700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1275200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 716400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 966100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1298700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 158100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4491100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 50022800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 610790600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 164823700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 134350500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 24300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 119090500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 193287500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 135624600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 592572500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 162965300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 434855600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000023200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000024200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000031100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000187800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 926413700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1603956300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000029500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000024300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000036500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000038800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000028400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000032300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000028300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000043200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000026200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000029700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000033500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 378100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000031700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000047400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000038300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n28_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 11041900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 775600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1552100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4531600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4362200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 5021100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 4167800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1994800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2423400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 27093500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1408904900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1940195500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1585254500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1852351000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1876947000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000024800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1570164900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1655269100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n32_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000045800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000035700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000035300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000069000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000032100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000047100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000035400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000029500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000043900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000038300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000042900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000068600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000040400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000029900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000036200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 23000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000045100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000040300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 22800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000032600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000047600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 25700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000052200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 24100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000036700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n32_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 125597000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 141931100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 60742600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 61708600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 53665200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 47221800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 422189100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 161932100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2722000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 870313400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n40_p0.1_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 12400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000028300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000039600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000035900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 14600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000035300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000030800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000031200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000042100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000029000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.3_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000047000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000038100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 18100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000043700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 24900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000063900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 31000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000048600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 23500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000034300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000047300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 23800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000058400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000071000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000037000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.5_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 20000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000040500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 25700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000053600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 22700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000041700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 26900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000036900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 22900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000057600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 23200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000045900,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 22600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000055400,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 27100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000038100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 22800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000060300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 26000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000049000,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.7_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 22500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000057100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 31600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000057600,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 25900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s2",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000067700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s2",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 30700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s3",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000046800,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s3",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 24900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s4",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000054100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s4",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 30600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s5",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000045300,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s5",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 27300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000052500,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 29200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s7",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000054200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s7",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 26100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000066200,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 30100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s9",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000044700,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "gnp_n40_p0.9_s9",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 25800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 49000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm100",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 58600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm100",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 73800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 59600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 70500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm104",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 91600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm104",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm105",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 60500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm105",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm106",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 58900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm106",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm107",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 78200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm107",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm108",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 68200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm108",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n12_perm109",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 64800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n12_perm109",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n16",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 68900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n16",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n20",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 96100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n20",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 120200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm100",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 439100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm100",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 357700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 359300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 252500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm104",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 238500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm104",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm105",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 345700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm105",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm106",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 364700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm106",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm107",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 436100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm107",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm108",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 606300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm108",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 11100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n24_perm109",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 248200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n24_perm109",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n28",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 151900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n28",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n32",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 190400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n32",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n40",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 282200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n40",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 35700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 55400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm100",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 126500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm100",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 99400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 100900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 83700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm104",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 95400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm104",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm105",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 88900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm105",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm106",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 99500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm106",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm107",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 95000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm107",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm108",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 93800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm108",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n12_perm109",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 78300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n12_perm109",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n16",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 75000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n16",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n20",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 101000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n20",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 128300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm100",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 450400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm100",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 437200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 537800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 469800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm104",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 284300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm104",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm105",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 367600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm105",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm106",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 288700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm106",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm107",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 486500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm107",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm108",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 403500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm108",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n24_perm109",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 368100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n24_perm109",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n28",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 159400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n28",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n32",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 196600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n32",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n40",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 292500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n40",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 32800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 57800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm100",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 41600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm100",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 27000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 40400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 8300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm104",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 25500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm104",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm105",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 26400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm105",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm106",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 23600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm106",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm107",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 25300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm107",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4900,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm108",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 23500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm108",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n12_perm109",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 26200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n12_perm109",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n16",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n16",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n20",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n20",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 32500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm100",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 35000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm100",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 36000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm104",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm104",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm105",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 35300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm105",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm106",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 36600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm106",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm107",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 37700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm107",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm108",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 34400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm108",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n24_perm109",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 32900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n24_perm109",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n28",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 37200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n28",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n32",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 42400,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n32",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n40",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 45500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n40",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 347500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "clique_n8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n12",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 5624900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "clique_n12",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n16",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 90926300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "clique_n16",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n20",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1520302900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "clique_n20",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 16300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n24",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000025100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "clique_n24",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 19600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n28",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000035100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "clique_n28",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 17100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n32",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000048100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "clique_n32",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 23600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n40",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2000051100,
+      "status": "timeout"
+    },
+    {
+      "instance_id": "clique_n40",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 28200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 32200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n12",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 43000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n12",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n16",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 55000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n16",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n20",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 74100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n20",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n24",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 89700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n24",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n28",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 111500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n28",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n32",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 132700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n32",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n40",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 193200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n40",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n8",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 47800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n8",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n12",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 97300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n12",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n16",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 197800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n16",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n20",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 326800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n20",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 9500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n24",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 539300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n24",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 10700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n28",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 812100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n28",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 13300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n32",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 1160900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n32",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 15500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n40",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 2473200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n40",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 21600,
+      "status": "completed"
+    }
+  ],
+  "measured_rows": 3048,
+  "finished_utc": "2026-11-03T07:48:02.025267+00:00",
+  "raw_sha256": "4b55f25008afc76f7429826233bc24cda7f8e7064641e06c13ccaeaad7de4ded",
+  "details_sha256": "6244c8c91ed1288c45d871d33522ad4cad17d51befec6204a8b26d149f61caa9"
+}

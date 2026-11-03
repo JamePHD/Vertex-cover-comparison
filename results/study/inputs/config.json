@@ -1,0 +1,79 @@
+{
+  "name": "study",
+  "purpose": "comparative_study",
+  "predictions_file": "../docs/PREDICTIONS.md",
+  "random_sizes": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    40
+  ],
+  "probabilities": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    0.9
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "structured_sizes": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    40
+  ],
+  "families": [
+    "path",
+    "cycle",
+    "star",
+    "clique",
+    "disjoint_edges",
+    "complete_bipartite"
+  ],
+  "relabel_sizes": [
+    12,
+    24
+  ],
+  "relabel_families": [
+    "path",
+    "cycle",
+    "star"
+  ],
+  "permutation_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109
+  ],
+  "repetitions": 3,
+  "warmups": 1,
+  "exact_time_limit": 2.0,
+  "exact_node_limit": null,
+  "batch_threshold_ns": 1000000,
+  "batch_size": 25
+}

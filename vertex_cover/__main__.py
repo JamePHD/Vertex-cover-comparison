@@ -11,8 +11,10 @@ from .exact import solve_exact
 from .graph import Graph, is_vertex_cover
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Exact or approximate minimum vertex cover")
+def solve_main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Exact or approximate minimum vertex cover",
+        epilog="Workflow commands: generate, benchmark, analyse, plot, experiment. "
+               "Example: python -m vertex_cover experiment --help")
     parser.add_argument("graph", type=Path, help="JSON with num_vertices and edges")
     parser.add_argument("--algorithm", choices=("exact", "approximation"), default="exact")
     parser.add_argument("--time-limit", type=float, default=None,
@@ -58,6 +60,14 @@ def main(argv: list[str] | None = None) -> int:
         "stats": asdict(result.stats),
     }, indent=2))
     return 0 if result.optimal else 1
+
+
+def main(argv: list[str] | None = None) -> int:
+    values = sys.argv[1:] if argv is None else list(argv)
+    from .workflow import COMMANDS, main as workflow_main
+    if values and values[0] in COMMANDS:
+        return workflow_main(values)
+    return solve_main(values)
 
 
 if __name__ == "__main__":

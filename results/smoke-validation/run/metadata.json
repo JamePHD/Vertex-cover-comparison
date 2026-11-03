@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-11-02T20:14:55.324997+00:00",
+  "completed": true,
+  "purpose": "pipeline_validation",
+  "config": {
+    "name": "smoke",
+    "purpose": "pipeline_validation",
+    "predictions_file": "../docs/PREDICTIONS.md",
+    "random_sizes": [
+      6,
+      10
+    ],
+    "probabilities": [
+      0.2,
+      0.7
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "structured_sizes": [
+      6,
+      10
+    ],
+    "families": [
+      "path",
+      "cycle",
+      "star",
+      "clique",
+      "disjoint_edges",
+      "complete_bipartite"
+    ],
+    "relabel_sizes": [
+      10
+    ],
+    "relabel_families": [
+      "path"
+    ],
+    "permutation_seeds": [
+      101,
+      102,
+      103
+    ],
+    "repetitions": 3,
+    "warmups": 1,
+    "exact_time_limit": 0.02,
+    "exact_node_limit": 40,
+    "batch_threshold_ns": 1000000,
+    "batch_size": 25
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 165 Stepping 5, GenuineIntel",
+    "logical_cpu_count": 12,
+    "physical_ram_bytes": 34249052160,
+    "gc_enabled": true,
+    "gc_thresholds": [
+      700,
+      10,
+      10
+    ],
+    "clock": {
+      "implementation": "QueryPerformanceCounter()",
+      "resolution_seconds": 1e-07,
+      "monotonic": true,
+      "adjustable": false
+    },
+    "power_settings": "Not detected; record manually for the final study."
+  },
+  "source": {
+    "git_commit": "7b2d5fc9e055132d533b1edbbb2d11b2207d7663",
+    "source_sha256": {
+      "vertex_cover/__init__.py": "db46cc30244ff269ba657c79a4e71aa8310940e30ced314834e4fc847b86a360",
+      "vertex_cover/__main__.py": "4cbaad45da92bb2fe3ea8019a264cffb2b5e0bc1f2da5b05a944c2353ff7fe26",
+      "vertex_cover/analysis.py": "97daca42c599bed10f2303a4bd8efe31059fea4e622a5d23227766574c1b50ee",
+      "vertex_cover/approximation.py": "91e9549e11c97f20d61f2065a1dad07ba16589c09366bf616486f049dae032ed",
+      "vertex_cover/benchmark.py": "da11711cdabe01dc9689975bb9b346a350d109a22e1cfb61c3738d407ebc50c3",
+      "vertex_cover/datasets.py": "368f02940a175448ac00a1651237288e5cdc83dcf8d6a2aa6067b8c754200bb4",
+      "vertex_cover/exact.py": "9a76b14a9f24d0e0590ad326be8c0c782acf5e904efd3b8def2138c21c865dc9",
+      "vertex_cover/graph.py": "173cae284f031d8a75e4dd3156c3d1fd5504b1356d8bf69c90a88d7ae4438b45",
+      "vertex_cover/plots.py": "10740975714f6b149ca51c80888325a18341412f4f7e5c806a8d038c116d392b",
+      "vertex_cover/workflow.py": "f4ca297e86e45e70654d15a6e114f09deb0a4928e8a572ef178d7137fe512d9a"
+    },
+    "note": "Source hashes identify executed files even when changes are uncommitted."
+  },
+  "manifest_sha256": "920c96adda8a8b6d01a230ce4e279e343f6eed6898842a7c71fbee797c775016",
+  "predictions_sha256": "0d7b0c407f67b36020fd586e482a7aa922c6fff22793fc86aa7b8d25d1722150",
+  "prediction_endorsement": "AI-assisted proposals; student endorsement not verified by the runner.",
+  "timer": "perf_counter_ns",
+  "median_back_to_back_timer_ns": 100,
+  "timing_scope": "Complete solver calls, common wrapper and result list retention; excludes validation and I/O.",
+  "batch_rule": "Batch up to configured size only after a completed warm-up below threshold; warmups=0 means one call.",
+  "timeout_policy": "Cooperative, not a hard deadline. Mixed-status batches retained and excluded from completed timing.",
+  "warmups": [
+    {
+      "instance_id": "gnp_n6_p0.2_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 19000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n6_p0.2_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n6_p0.2_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 31700,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n6_p0.2_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n6_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 59800,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n6_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 7800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n6_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 53100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n6_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4500,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n10_p0.2_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 22500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n10_p0.2_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n10_p0.2_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 43300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n10_p0.2_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n10_p0.7_s0",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 162600,
+      "status": "node_limit"
+    },
+    {
+      "instance_id": "gnp_n10_p0.7_s0",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "gnp_n10_p0.7_s1",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 333600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "gnp_n10_p0.7_s1",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n10",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 42000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n10",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n10_perm101",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 46100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n10_perm101",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5000,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n10_perm102",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 49200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n10_perm102",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4800,
+      "status": "completed"
+    },
+    {
+      "instance_id": "path_n10_perm103",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 67300,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "path_n10_perm103",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 28100,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "cycle_n10",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 46900,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "cycle_n10",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 19000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4100,
+      "status": "completed"
+    },
+    {
+      "instance_id": "star_n10",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 23000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "star_n10",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 89600,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "clique_n6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4400,
+      "status": "completed"
+    },
+    {
+      "instance_id": "clique_n10",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 187400,
+      "status": "node_limit"
+    },
+    {
+      "instance_id": "clique_n10",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6600,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 25000,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4200,
+      "status": "completed"
+    },
+    {
+      "instance_id": "disjoint_edges_n10",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 51500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "disjoint_edges_n10",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 5300,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n6",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 33200,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n6",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 4700,
+      "status": "completed"
+    },
+    {
+      "instance_id": "complete_bipartite_n10",
+      "algorithm": "exact",
+      "warmup": 0,
+      "elapsed_ns": 68500,
+      "status": "optimal"
+    },
+    {
+      "instance_id": "complete_bipartite_n10",
+      "algorithm": "approximation",
+      "warmup": 0,
+      "elapsed_ns": 6400,
+      "status": "completed"
+    }
+  ],
+  "measured_rows": 138,
+  "finished_utc": "2026-11-02T20:14:55.585374+00:00",
+  "raw_sha256": "dba129d8cc7cb614ad13cc005c207604790966ac523d3d2b645d059a9b757fb5",
+  "details_sha256": "46279c9614934bb0c05fcd05b51bdf4b2ab8be653425c2502d1ca1d9dbc93f12"
+}
