@@ -170,8 +170,7 @@ is two, while OPT is one.
    matching lower bound, optimality is established immediately. Otherwise
    exhaust all branches that could improve the answer.
 
-The matching computation is an internal bound, not an implementation of the
-partner's approximation solver. Branches prefer edges with high-degree
+The matching computation is an internal bound, not an implementation of James' approximation solver. Branches prefer edges with high-degree
 endpoints; ties and traversal are deterministic. An explicit stack avoids
 Python's recursion-depth limit. Exhaustive branching is exponential in the
 worst case; pruning improves some instances without eliminating that risk.
