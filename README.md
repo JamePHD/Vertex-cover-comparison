@@ -66,7 +66,7 @@ if desired; this is optional and the build backend may need downloading.
 ## Current scope and responsibility
 
 - Exact solver: assigned student owner **Derek Song**.
-- Approximation: maximal-matching 2-approximation for the other group member.
+- Approximation: maximal-matching 2-approximation assigned student owner **James Huang**.
 - Shared graph model, feasibility checker, JSON CLI, and correctness tests included.
 - Shared generators, paired benchmarks, analysis, and scientific plots are included.
 - Final study settings and predictions need both students' review; the report
