@@ -16,7 +16,7 @@
   set and added regression cases. Do not claim a student personally found this
   unless they independently did so.
 - No performance comparison has been run. No empirical findings or surprises
-  have been established. The partner's approximation is not implemented yet.
+  have been established. James' approximation is not implemented yet.
 
 ## To record as work proceeds
 
